@@ -6,6 +6,54 @@
 	},
 	"item": [
 		{
+			"name": "getVariable",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f8f439f3-e4cf-45a1-8c79-a34308559689",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9d931310-592a-4acd-bf84-5e8e6ae89af4",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"someVar\", jsonData.args.someVar);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?someVar=lorem",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "someVar",
+							"value": "lorem"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Ping",
 			"request": {
 				"method": "GET",
@@ -33,7 +81,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://postman-echo.com/get?first={{var1}}&second={{var2}}",
+					"raw": "https://postman-echo.com/get?first={{var1}}&second={{var2}}&someVar={{someVar}}",
 					"protocol": "https",
 					"host": [
 						"postman-echo",
@@ -50,6 +98,10 @@
 						{
 							"key": "second",
 							"value": "{{var2}}"
+						},
+						{
+							"key": "someVar",
+							"value": "{{someVar}}"
 						}
 					]
 				}
