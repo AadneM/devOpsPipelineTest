@@ -26,6 +26,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "echo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/get?first={{var1}}&second={{var2}}",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"get"
+					],
+					"query": [
+						{
+							"key": "first",
+							"value": "{{var1}}"
+						},
+						{
+							"key": "second",
+							"value": "{{var2}}"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
