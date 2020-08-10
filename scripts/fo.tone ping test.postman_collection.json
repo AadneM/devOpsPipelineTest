@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "4986f428-8fa2-4711-985a-690cf76256ac",
+		"name": "fo.tone ping test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://ngrmdffoapidev.azurewebsites.net/fiberoptic/healthcheck/host",
+					"protocol": "https",
+					"host": [
+						"ngrmdffoapidev",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"fiberoptic",
+						"healthcheck",
+						"host"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
